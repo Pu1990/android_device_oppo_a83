@@ -13,4 +13,4 @@ OPPO A83 TWRP3.2.3 Device Tree[Omnirom 7.1]
 | Display                 | 1440x720                          |
 ---------------------------------------------------------------
 
-![OPPO A83](https://cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/a4842f9afc615164af83c2088a412fc0.jpg "OPPO A83")
+![OPPO A83](https://2d.zol-img.com.cn/product/188_320x240/989/ce6pH93wCquco.jpg "OPPO A83")
