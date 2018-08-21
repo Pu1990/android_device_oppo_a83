@@ -1,0 +1,98 @@
+USE_CAMERA_STUB := true
+
+DEVICE_PATH := device/oppo/a83
+
+# inherit from the proprietary version
+-include vendor/oppo/a83/BoardConfigVendor.mk
+
+# Platform
+TARGET_BOARD_PLATFORM := mt6763t
+TARGET_NO_BOOTLOADER := true
+
+TARGET_LDPRELOAD += libxlog.so
+
+# Architecture
+TARGET_ARCH := arm64
+TARGET_ARCH_VARIANT := armv8-a
+TARGET_CPU_ABI := arm64-v8a
+TARGET_CPU_ABI2 :=
+TARGET_CPU_VARIANT := generic
+
+TARGET_2ND_ARCH := arm
+TARGET_2ND_ARCH_VARIANT := armv7-a-neon
+TARGET_2ND_CPU_ABI := armeabi-v7a
+TARGET_2ND_CPU_ABI2 := armeabi
+TARGET_2ND_CPU_VARIANT := cortex-a53
+
+TARGET_BOARD_SUFFIX := _64
+TARGET_USES_64_BIT_BINDER := true
+
+# Mkbootimg
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x04f88000 --tags_offset 0x03f88000 --board 1450664547 
+
+# Kernel
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image.gz-dtb
+BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 androidboot.selinux=permissive
+BOARD_KERNEL_BASE := 0x40078000
+BOARD_KERNEL_PAGESIZE := 2048
+BOARD_RAMDISK_OFFSET := 0x03f88000
+
+# fix this up by examining /proc/mtd on a running device
+BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 1677721600
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3867148288
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 11206656000
+BOARD_CACHEIMAGE_PARTITION_SIZE := 419430400
+BOARD_FLASH_BLOCK_SIZE := 131072
+BOARD_HAS_NO_SELECT_BUTTON := true
+
+# Assert
+TARGET_OTA_ASSERT_DEVICE := OPPO A83js,a83,full_oppo6763_17101,M6763C,oppo6763_17101,A83js
+
+#system.prop
+TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
+
+# Recovery
+BOARD_HAS_NO_SELECT_BUTTON := true
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/etc/recovery.fstab
+
+# The path to a temperature sensor
+TW_CUSTOM_CPU_TEMP_PATH := /sys/class/thermal/thermal_zone1/temp
+
+# NTES
+TW_INCLUDE_NTFS_3G := true
+
+# NO build TWRP APK
+TW_EXCLUDE_TWRPAPP := true
+
+# Sdcard
+RECOVERY_SDCARD_ON_DATA := true
+
+# Crypto
+TW_INCLUDE_CRYPTO := true
+
+# Disable Mouse Cursor
+TW_INPUT_BLACKLIST := "hbtp_vm"
+
+# exFAT FS Support
+TW_INCLUDE_FUSE_EXFAT := true
+
+# NTFS Support
+TW_INCLUDE_FUSE_NTFS := true
+
+# Theme
+DEVICE_RESOLUTION := 1440x720
+TW_THEME := portrait_mdpi
+TW_DEFAULT_LANGUAGE := zh_CN
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+TW_EXTRA_LANGUAGES := true
+
+# TWRP otherconfig
+BOARD_HAS_FLIPPED_SCREEN := true
+TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
+TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
+
+# Treble
+BOARD_NEEDS_VENDORIMAGE_SYMLINK := false
+TARGET_COPY_OUT_VENDOR := vendor

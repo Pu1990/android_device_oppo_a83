@@ -1,0 +1,53 @@
+#device         mount point      fstype        [device2] [length=]
+
+/system ext4 /dev/block/platform/bootdevice/by-name/system  
+
+/cache ext4 /dev/block/platform/bootdevice/by-name/cache  
+
+/data ext4 /dev/block/platform/bootdevice/by-name/userdata encryptable=/dev/block/platform/bootdevice/by-name/metadata 
+
+/boot emmc /dev/block/platform/bootdevice/by-name/boot 
+
+/recovery emmc /dev/block/platform/bootdevice/by-name/recovery 
+
+/misc emmc /dev/block/platform/bootdevice/by-name/para  
+
+/external_sd vfat /dev/block/mmcblk1p1 flags=display="External-Storage";storage;removable
+
+/reserve2 emmc /dev/block/platform/bootdevice/by-name/reserve2 
+
+/nvram emmc /dev/block/platform/bootdevice/by-name/nvram  
+
+/proinfo emmc /dev/block/platform/bootdevice/by-name/proinfo 
+
+/bootloader emmc /dev/block/platform/bootdevice/by-name/lk
+
+/bootloader2 emmc /dev/block/platform/bootdevice/by-name/lk2  
+
+/logo emmc /dev/block/platform/bootdevice/by-name/logo  
+
+/expdb emmc /dev/block/platform/bootdevice/by-name/expdb  
+
+/secro emmc /dev/block/platform/bootdevice/by-name/secro  
+
+/seccfg emmc /dev/block/platform/bootdevice/by-name/seccfg  
+
+/tee1 emmc /dev/block/platform/bootdevice/by-name/tee1    
+
+/tee2 emmc /dev/block/platform/bootdevice/by-name/tee2  
+
+/md1img emmc /dev/block/platform/bootdevice/by-name/md1img     
+
+/md1dsp emmc /dev/block/platform/bootdevice/by-name/md1dsp 
+
+/md1arm7 emmc /dev/block/platform/bootdevice/by-name/md1arm7         
+
+/md3img emmc /dev/block/platform/bootdevice/by-name/md3img     
+
+/nvdata ext4 /dev/block/platform/bootdevice/by-name/nvdata  
+
+/spmfw emmc /dev/block/platform/bootdevice/by-name/spmfw  
+
+/sspm_1 emmc /dev/block/platform/bootdevice/by-name/sspm_1     
+
+/sspm_2 emmc /dev/block/platform/bootdevice/by-name/sspm_2      
