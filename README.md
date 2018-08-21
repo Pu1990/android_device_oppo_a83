@@ -13,4 +13,5 @@ OPPO A83 TWRP3.2.3 Device Tree[Omnirom 7.1]
 | MicroSD                 | Up to 128GB                       |
 | Battery                 | 3180 mAh                          |
 | Display                 | 1440x720                          |
+| Kernel version          | 4.4.22                            |
 ---------------------------------------------------------------
